@@ -31,33 +31,31 @@ const getWeather = () => {
 
 			warning.textContent = '';
 			input.value = '';
-        
-            
+
 			if (id >= 200 && id < 300) {
-                photo.setAttribute('src', '/img/thunderstorm.png');
+				photo.setAttribute('src', 'img/thunderstorm.png');
 			} else if (id >= 300 && id < 400) {
-                photo.setAttribute('src', '/img/drizzle.png');
+				photo.setAttribute('src', 'img/drizzle.png');
 			} else if (id >= 500 && id < 600) {
-                photo.setAttribute('src', '/img/rain.png');
+				photo.setAttribute('src', 'img/rain.png');
 			} else if (id >= 600 && id < 700) {
-                photo.setAttribute('src', '/img/ice.png');
+				photo.setAttribute('src', 'img/ice.png');
 			} else if (id >= 700 && id < 800) {
-                photo.setAttribute('src', '/img/fog.png');
+				photo.setAttribute('src', 'img/fog.png');
 			} else if (id == 800) {
-                photo.setAttribute('src', '/img/sun.png');
+				photo.setAttribute('src', 'img/sun.png');
 			} else if (id > 800 && id < 900) {
-                photo.setAttribute('src', '/img/cloud.png');
+				photo.setAttribute('src', 'img/cloud.png');
 			} else {
-                photo.setAttribute('src', '/img/unknown.png');
+				photo.setAttribute('src', 'img/unknown.png');
 			}
 		})
 		.catch(() => (warning.textContent = 'Wpisz poprawną nazwę miasta!'));
-       }
-       const enterCheck = (e) => {
-        if(e.key === 'Enter')
-            getWeather()
-       }
+};
+const enterCheck = (e) => {
+	if (e.key === 'Enter') getWeather();
+};
 
-    input.addEventListener('keyup', enterCheck)
-    
-    button.addEventListener('click', getWeather);
+input.addEventListener('keyup', enterCheck);
+
+button.addEventListener('click', getWeather);
